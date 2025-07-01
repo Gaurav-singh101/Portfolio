@@ -1,0 +1,439 @@
+ProjectCard.css
+.project-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+.project-card.featured {
+  background: linear-gradient(135deg, 
+    rgba(123, 97, 255, 0.1) 0%, 
+    rgba(255, 97, 185, 0.1) 100%);
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  box-shadow: 
+    0 16px 40px rgba(123, 97, 255, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.project-card.featured:hover {
+  box-shadow: 
+    0 24px 64px rgba(123, 97, 255, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+/* Card Background Effects */
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.card-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .card-gradient {
+  opacity: 1;
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(123, 97, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  animation: rotate 20s linear infinite;
+}
+
+.project-card.featured:hover .card-glow {
+  opacity: 1;
+}
+
+/* Card Content */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Container */
+.card-image-container {
+  position: relative;
+  height: 240px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+}
+
+.project-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+}
+
+.project-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-link.github:hover {
+  background: rgba(110, 84, 148, 0.8);
+}
+
+.project-link.live:hover {
+  background: rgba(123, 97, 255, 0.8);
+}
+
+.project-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-badge.in-progress {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.duration {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.featured-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #7b61ff, #ff61b9);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.featured-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 0;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tech-tag {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.tech-tag:hover {
+  background: rgba(123, 97, 255, 0.3);
+  transform: translateY(-2px);
+  border-color: rgba(123, 97, 255, 0.5);
+}
+
+.card-highlights {
+  margin-top: 8px;
+}
+
+.card-highlights h4 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.card-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-highlights li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4px 0;
+  position: relative;
+  padding-left: 16px;
+}
+
+.card-highlights li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: #7b61ff;
+  font-size: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Decorative Elements */
+.card-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #7b61ff, #ff61b9);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-dot.dot-1 {
+  top: 20%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.floating-dot.dot-2 {
+  top: 60%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.floating-dot.dot-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-image-container {
+    height: 200px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .project-link {
+    justify-content: center;
+  }
+}
