@@ -32,7 +32,7 @@ const Experience = () => {
               <div className="timeline-line"></div>
             </div>
             <div className="timeline-content">
-              <div className="experience-header">
+              <div className="experience-header-section">
                 <div className="experience-title-section">
                   <h3 className="experience-title">{exp.title}</h3>
                   <div className="experience-company">
@@ -46,31 +46,34 @@ const Experience = () => {
                 </div>
               </div>
 
-              <p className="experience-description">{exp.description}</p>
+              {activeExperience === index && (
+                <>
+                  <p className="experience-description">{exp.description}</p>
 
-              <div className="experience-details">
-                <div className="responsibilities-section">
-                  <h4>Key Responsibilities</h4>
-                  <ul className="responsibilities-list">
-                    {exp.responsibilities.map((resp, i) => (
-                      <li key={i} className="responsibility-item">{resp}</li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="experience-details">
+                    <div className="responsibilities-section">
+                      <h4>Key Responsibilities</h4>
+                      <ul className="responsibilities-list">
+                        {exp.responsibilities.map((resp, i) => (
+                          <li key={i} className="responsibility-item">{resp}</li>
+                        ))}
+                      </ul>
+                    </div>
 
-
-                <div className="achievements-section">
-                  <h4>Key Achievements</h4>
-                  <ul className="achievements-list">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="achievement-item">
-                        <span className="achievement-icon"></span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                    <div className="achievements-section">
+                      <h4>Key Achievements</h4>
+                      <ul className="achievements-list">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="achievement-item">
+                            <span className="achievement-icon"></span>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ))}
