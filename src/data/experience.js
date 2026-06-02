@@ -1,159 +1,119 @@
 export const experienceData = [
-    {
+  {
     id: 1,
-    title: 'Backend Developer',
-    company: '',
-    location: '',
-    duration: '',
-    type: '',
-    description: 'Building and maintaining scalable backend services and RESTful APIs using Node.js, Express.js, and MongoDB. Collaborating with frontend teams, ensuring system performance, and integrating secure authentication mechanisms.',
+    title: 'TARE Project Intern',
+    company: 'ANRF (SERB) - Department of Science & Technology, Govt. of India',
+    location: 'India',
+    duration: 'May 2025 - Aug 2025',
+    type: 'Internship',
+    description: 'Worked on a real-time vehicle tracking and traffic density estimation system using Computer Vision and AI technologies. Focused on vehicle detection, tracking, and backend API integration for processing aerial footage.',
     responsibilities: [
-      'Designed and implemented RESTful APIs using Node.js and Express.js for high-traffic applications',
-      'Integrated MongoDB for efficient and scalable data management',
-      'Implemented JWT-based authentication and role-based access control',
-      'Collaborated with frontend teams to integrate APIs and resolve backend issues',
-      'Optimized server-side logic, reducing response time by 40%',
-      'Deployed and monitored backend services on cloud platforms like AWS'
+      'Developed a real-time vehicle tracking system using YOLOv8 and OpenCV',
+      'Processed aerial drone footage for vehicle detection and monitoring',
+      'Built backend APIs using FastAPI for data processing and integration',
+      'Implemented traffic density estimation techniques using tracked vehicle data',
+      'Optimized detection pipelines for improved real-time performance',
+      'Collaborated on research-driven AI solutions for intelligent transportation systems'
     ],
-    technologies: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'AWS'],
+    technologies: ['Python', 'YOLOv8', 'OpenCV', 'FastAPI', 'Computer Vision'],
     achievements: [
-      'Improved API performance by 50% with efficient query structuring and indexing in MongoDB',
-      'Successfully handled 1M+ API requests/month with zero downtime',
-      'Led migration from monolithic to modular Express.js architecture'
+      'Successfully developed a real-time AI-powered vehicle tracking system',
+      'Applied advanced computer vision techniques for traffic monitoring',
+      'Secured 3rd Place recognition through the TARE Project initiative'
+    ]
+  },
+
+  {
+    id: 2,
+    title: 'Technical Team Member',
+    company: 'IEEE SRMIST',
+    location: 'Chennai, India',
+    duration: 'Nov 2024 - Present',
+    type: 'Leadership & Technical',
+    description: 'Contributing to web development initiatives and technical infrastructure for IEEE SRMIST while supporting large-scale technical events and student communities.',
+    responsibilities: [
+      'Contribute to web development and technical projects for IEEE SRMIST',
+      'Support technical infrastructure and event management activities',
+      'Collaborate with team members to improve digital platforms',
+      'Assist in organizing and executing technical workshops and events',
+      'Provide technical support for student-focused initiatives',
+      'Work with cross-functional teams to enhance community engagement'
+    ],
+    technologies: ['JavaScript', 'React', 'Node.js', 'Git', 'GitHub'],
+    achievements: [
+      'Supported technical initiatives impacting 800+ students',
+      'Contributed to successful execution of technical events and workshops',
+      'Actively participated in strengthening IEEE SRMIST digital presence'
     ]
   }
-,
-    {
-      id: 2,
-      title: 'Full Stack Developer',
-      company: '',
-      location: '',
-      duration: '',
-      type: '',
-      description: 'Developed and maintained full stack web applications using React for the frontend and Node.js/Express for backend services. Collaborated with cross-functional teams to ship features, enhance performance, and ensure product scalability.',
-      responsibilities: [
-        'Built responsive and dynamic user interfaces using React and Tailwind CSS',
-        'Developed RESTful APIs and backend services using Node.js and Express',
-        'Managed MongoDB databases with efficient schema design and indexing',
-        'Integrated third-party APIs and payment gateways for business operations',
-        'Set up Docker containers for consistent development and deployment',
-        'Implemented CI/CD workflows for streamlined code integration and deployment',
-        'Participated in Agile sprints, product planning, and code reviews'
-      ],
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'GitHub Actions'],
-      achievements: [
-        'Successfully launched 3 full-scale applications with 1k+ active users',
-        'Reduced backend API response time by 45% through performance tuning',
-        'Improved frontend load performance by 50% with code-splitting and lazy loading'
-      ]
-    }
-,
-    {
-      id: 3,
-      title: 'AI/ML Enthusiast',
-      company: '',
-      location: '',
-      duration: '',
-      type: '',
-      description: 'Built responsive and high-performing web applications for clients while recently beginning a transition into Artificial Intelligence and Machine Learning with the goal of integrating smart features into future web projects.',
-      responsibilities: [
-        'Developed and maintained responsive websites for 20+ clients using HTML, CSS, JavaScript, and React',
-        'Collaborated with UI/UX designers to implement pixel-perfect, user-friendly interfaces',
-        'Optimized websites for SEO, accessibility, and performance',
-        'Provided client training and support on maintaining WordPress websites',
-        'Currently learning AI/ML concepts such as supervised learning, NLP, and computer vision to build intelligent web features'
-      ],
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'React', 'WordPress', 'Python (learning)', 'scikit-learn (learning)'],
-      achievements: [
-        'Enhanced website performance by 50% through optimization best practices',
-        'Completed all assigned client projects 20% ahead of schedule',
-        'Maintained a 98% client satisfaction score across all delivered projects',
-        'Started AI/ML learning journey to build intelligent and data-driven web applications in the near future'
-      ]
-    }
-
-  // {
-  //   id: 4,
-  //   title: 'Junior Web Developer',
-  //   company: 'Digital Solutions Inc',
-  //   location: 'Austin, TX',
-  //   duration: 'Aug 2019 - May 2020',
-  //   type: 'Full-time',
-  //   description: 'Started career as junior developer, learned modern web technologies and contributed to various client projects.',
-  //   responsibilities: [
-  //     'Assisted in developing client websites and applications',
-  //     'Fixed bugs and implemented minor features',
-  //     'Participated in daily standups and sprint planning',
-  //     'Learned and applied new technologies under senior guidance',
-  //     'Wrote technical documentation for projects'
-  //   ],
-  //   technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
-  //   achievements: [
-  //     'Successfully completed all assigned tasks',
-  //     'Received excellent performance reviews',
-  //     'Quickly learned new technologies'
-  //   ]
-  // }
 ];
+
 
 export const educationData = [
   {
     id: 1,
     degree: 'Bachelor of Technology in Computer Science and Engineering',
     institution: 'SRM Institute of Science and Technology',
-    location: 'Chennai, India',
+    location: 'Chennai, Tamil Nadu, India',
     duration: '2023 - 2027',
-    gpa: '9.647 / 10',
-    description: 'Focused on full stack development, backend engineering, and AI/ML integration. Actively building impactful projects and contributing to hackathons and tech communities.',
-    coursework: [
-      'Data Structures and Algorithms',
-      'Database Management Systems',
-      'Operating Systems',
-      'Web Technologies',
-      'Artificial Intelligence & Machine Learning',
-      'Software Engineering',
-      'Computer Networks'
-    ],
-    projects: [
-      'Gov_Linker – a civic platform connecting citizens with government officials using Aadhaar-based login and role-based access',
-      'Book Nova – a smart e-commerce platform for books with search filters and secure checkout',
-      'Fake News Detector – built using NLP and trained on Kaggle datasets',
-      'Placement Matrix Dashboard – tracks student achievements across 30+ placement metrics',
-      'Real-time Weather App – responsive UI with OpenWeather API and dark/light mode toggle',
-      'Vehicle Tracking System – drone footage-based traffic monitoring using FastAPI and YOLOv8'
-    ],
-    activities: [
-      'Participant – Smart India Hackathon 2024 (Govt Infra Monitoring Project)',
-      'AI/ML Enthusiast – Working on drone analytics and ML-integrated web apps',
-      'Learning – Power BI, NPTEL AI courses, and other certification programs',
-      'Active – Hackathons, in-house projects, and web development communities'
-    ]
+    gpa: '9.65 / 10',
+  },
+
+  {
+    id: 2,
+    degree: 'Higher Secondary Education (Class XII)',
+    institution: 'Saraswati Vidya Mandir Inter College',
+    location: 'India',
+    duration: '2022 - 2023',
+    gpa: '86.4%',
+  },
+
+  {
+    id: 3,
+    degree: 'Secondary Education (Class X)',
+    institution: 'Saraswati Vidya Mandir Inter College',
+    location: 'India',
+    duration: '2020 - 2021',
+    gpa: '82.83%',
   }
 ];
+
 
 export const certificationsData = [
   {
     id: 1,
-    name: 'Data Base Management System (NPTEL)',
-    issuer: 'NPTEL',
-    date: 'Mar 2025',
-    // credentialId: 'AWS-DEV-2023-001',
-    description: 'Demonstrates understanding of core concepts in Database Management Systems, including data models, relational algebra, normalization, indexing, and SQL, as certified by NPTEL.'
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services (AWS)',
+    date: 'March 14, 2026',
   },
   {
     id: 2,
-    name: 'Amazon Certified AWS Cloud Virtual Internship',
-    issuer: 'AWS',
-    date: 'June 2025',
-    credentialId: 'b206edac172c6e7900c94d2501e6d707',
-    description: 'Showcases hands-on experience with AWS cloud services through a virtual internship, including deployment, management, and monitoring of cloud-based applications.'
+    name: 'Data Base Management System',
+    issuer: 'NPTEL',
+    date: 'Mar 2025',
   },
   {
     id: 3,
-    name: 'Career Essentials in software Development (Microsoft)',
-    issuer: 'Microsoft',
-    date: 'Aug 2024',
-    credentialId: 'c37e3fc3276373127e701ba8731a2018f33cd73c268a994282777accf751486d',
-    description: 'Covers foundational and career-focused skills in software development, including programming principles, software lifecycle, and industry best practices, certified by Microsoft.'
+    name: 'Awarded by SRM Institute of Science and Technology for academic excellence',
+    issuer: 'SRM Institute of Science and Technology',
+    date: '2025'
+  },
+  {
+    id: 4,
+    name: 'Amazon AWS Cloud Virtual Internship',
+    issuer: 'Amazon Web Services (AWS)',
+    date: '2025'
+  },
+  {
+    id: 5,
+    name: 'Smart India Hackathon (SIH) Participation',
+    issuer: 'Smart India Hackathon',
+    date: '2025'
+  },
+  {
+    id: 6,
+    name: 'Certificate of Merit – SRMIST Science & IoT Exhibition',
+    issuer: 'SRM Institute of Science and Technology',
+    date: '2025'
   }
 ];

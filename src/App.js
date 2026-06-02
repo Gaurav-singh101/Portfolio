@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -10,6 +11,7 @@ import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/UI/ScrollToTop';
 import './styles/globals.css';
 import './styles/animations.css';
+import 'lenis/dist/lenis.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +31,26 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Smooth scroll with Lenis
+  useEffect(() => {
+    if (isLoading) return;
+
+    const lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, [isLoading]);
 
   useEffect(() => {
     if (darkMode) {
@@ -53,7 +75,7 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'dark' : ''}`}>
-      <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+      <div className="min-h-screen" style={{background: '#000000'}}>
         <Header darkMode={darkMode} toggleTheme={toggleTheme} />
         <main>
           <Hero />

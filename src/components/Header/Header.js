@@ -27,24 +27,35 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('scroll', handleSectionChange);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleSectionChange);
     };
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (sectionId) => {
     // Special handling for home section
     if (sectionId === 'home') {
-      window.scrollTo({ 
-        top: 0, 
-        behavior: 'smooth' 
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
@@ -54,12 +65,12 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'about', label: 'About', icon: '👤' },
-    { id: 'skills', label: 'Skills', icon: '💡' },
-    { id: 'projects', label: 'Projects', icon: '🚀' },
-    { id: 'experience', label: 'Experience', icon: '💼' },
-    { id: 'contact', label: 'Contact', icon: '📧' }
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'contact', label: 'Contact' }
   ];
 
   return (
@@ -103,7 +114,7 @@ const Header = () => {
         </div> */}
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className={`mobile-menu-btn ${isMobileMenuOpen ? 'mobile-menu-btn--open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
@@ -115,7 +126,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`mobile-nav ${isMobileMenuOpen ? 'mobile-nav--open' : ''}`}>
+      <div className={`mobile-nav ${isMobileMenuOpen ? 'mobile-nav--open' : ''}`} data-lenis-prevent>
         <div className="mobile-nav__backdrop" onClick={() => setIsMobileMenuOpen(false)}></div>
         <div className="mobile-nav__content">
           <div className="mobile-nav__header">
@@ -126,7 +137,7 @@ const Header = () => {
               </div>
               <span className="logo__name">Gaurav Singh</span>
             </div>
-            <button 
+            <button
               className="mobile-nav__close"
               onClick={() => setIsMobileMenuOpen(false)}
             >
